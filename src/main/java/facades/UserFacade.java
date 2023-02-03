@@ -103,21 +103,21 @@ public class UserFacade {
     }
 
     public static void main(String[] args) {
-//        try {
-//            Connection con = DBConnector.connection("startcode");
-//            String createTable = "CREATE TABLE IF NOT EXISTS `usertable` (\n" +
-//                    "  `id` INT NOT NULL AUTO_INCREMENT,\n" +
-//                    "  `fname` VARCHAR(45) NULL,\n" +
-//                    "  `lname` VARCHAR(45) NULL,\n" +
-//                    "  `pw` VARCHAR(45) NULL,\n" +
-//                    "  `phone` VARCHAR(45) NULL,\n" +
-//                    "  `address` VARCHAR(45) NULL,\n" +
-//                    "  PRIMARY KEY (`id`));";
-//            con.prepareStatement(createTable).executeUpdate();
-//            con.prepareStatement("DELETE FROM `startcode`.`usertable`").executeUpdate();
-//        } catch (ClassNotFoundException | SQLException e) {
-//            e.printStackTrace();
-//        }
+        try {
+            Connection con = DBConnector.connection("startcode");
+            String createTable = "CREATE TABLE IF NOT EXISTS `usertable` (\n" +
+                    "  `id` INT NOT NULL AUTO_INCREMENT,\n" +
+                    "  `fname` VARCHAR(45) NULL,\n" +
+                    "  `lname` VARCHAR(45) NULL,\n" +
+                    "  `pw` VARCHAR(45) NULL,\n" +
+                    "  `phone` VARCHAR(45) NULL,\n" +
+                    "  `address` VARCHAR(45) NULL,\n" +
+                    "  PRIMARY KEY (`id`));";
+            con.prepareStatement(createTable).executeUpdate();
+            con.prepareStatement("DELETE FROM `startcode`.`usertable`").executeUpdate();
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+        }
 
         UserFacade fe = new UserFacade("startcode");
         UserDTO user = fe.create(new UserDTO("Hansi", "Hasagawa", "1234", "12345678", "Hansensvej 1"));
@@ -126,5 +126,5 @@ public class UserFacade {
 //        fe.update(new UserDTO(id, "Hans", "Hansen", "1234", "12345678", "Hansensvej 1"));
 //        fe.getAll().forEach(dto -> System.out.println(dto));
     }
-
 }
+
