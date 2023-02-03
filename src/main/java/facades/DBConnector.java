@@ -34,7 +34,7 @@ public class DBConnector {
             String user = System.getenv("USER");
             String pw = System.getenv("PW");
             String connectionUrl = System.getenv("CONNECTION_STR");
-            System.out.println("USING ENVIRONMENT VARIABLES: User: "+user+" PW: "+pw);
+            //System.out.println("USING ENVIRONMENT VARIABLES: User: "+user+" PW: "+pw);
             return new DBUserDTO(user, pw, connectionUrl);
         }
         return new DBUserDTO(USER, PW, URL);
